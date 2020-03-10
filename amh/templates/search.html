@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    iframe:focus {
+  outline: none;
+}
+
+iframe[seamless] {
+  display: block;
+}
+
+iframe:target {
+    target: parent;
+}
+</style>
+<iframe src='http://www.mls.com/search/washington/metro/seattle-area.mvc' frameborder=0 width=100% height=800></iframe>
+
+        <script src='https://www.google.com/recaptcha/api.js?render=explicit&onload=onloadCallback' async defer></script>
+
+    <script>
+        _S.defaults.location = {
+            lat: 46.8297524,
+			lng: -100.9310539,
+			zoom: 12,
+			custom: 0
+            };
+        _S.defaults.mediaurl = '//media.springidx.com/media/';
+    </script>
+
+    <meta name="spring:web" content="spring-web1.flexmls.com" />
+    <meta name="spring:last_sites_reload" content="Tuesday, March 10, 2020 4:26:38 AM UTC" />
+
+{% endblock %}

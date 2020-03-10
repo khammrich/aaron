@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<address>
+    Position: Broker<br />
+    <br />
+    5930 Evergreen Way<br />
+    Everett, WA 98203<br />
+    <br />
+
+    <abbr title="Phone">P:</abbr>
+    Phone: 425-348-9200<br />
+    Cell: 425-232-2525<br />
+    Fax: 425-347-7762<br />
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+{% endblock %}

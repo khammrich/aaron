@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="31.220.51.245" showDifferentInSync="false" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="31.220.51.245">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/aaronmoorehomes" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/aaronmoorehomes" />
+            <excludedPath local="true" path="$PROJECT_DIR$/ENV_DIR" />
+            <excludedPath local="true" path="$PROJECT_DIR$/venv" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/ENV_DIR" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
