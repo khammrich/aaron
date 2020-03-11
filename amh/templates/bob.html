@@ -1,57 +1,100 @@
 {% extends "layout.html" %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 
-</div><body>
+<style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #rcorners1 {
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+
+    #rcorners2 {
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+
+    #rcorners3 {
+        border-radius: 25px;
+        background: url(images/House.png) repeat left top;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+</style>
+
+<body>
+
+<div class="jumbotron" align="center">
+    <h1>Welcome to Aaron Moore Homes</h1>
+    <p id="rcorners3  class=" lead"> Aaron Moore is a Grade A, top notch, major league real estate agent that will work
+    to get YOU</p>
+    want YOU want.
+    Aaron consistently approaches deals with skill and tact while always keeping your best interest in mind.
+    He will sacrifice his time and safety to drive a deal home, his ultimate goal is to win for his clients
+    and his payoff knowing that he helped someone find their dream home.</p>
+</div>
+
+<p>Rounded corners for an element with a specified background color:</p>
+<p id="rcorners1">Rounded corners!</p>
+<p>Rounded corners for an element with a border:</p>
+<p id="rcorners2">Rounded corners!</p>
+<!--
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <!-- Carousel -->
-      <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
-  </style>
+-->
+<!-- Carousel
+
 <div class="container mt-3">
 
-<h2>Carousel</h2>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ul>
-
-  <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../static/images/aaronpic.png" alt="Los Angeles" width="359" height="358">
-    </div>
-    <div class="carousel-item">
-      <img src="../static/images/aaronpic.png" alt="Chicago" width="359" height="358">
-    </div>
-    <div class="carousel-item">
-      <img src="../static/images/aaronpic.png" alt="New York" width="359" height="358">
-    </div>
+    <h2>Carousel</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+-->
+<!-- Indicators
+<ul class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ul>
+-->
+<!-- The slideshow
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="../static/images/aaronpic.png" alt="Los Angeles" width="359" height="358">
   </div>
-
-  <!-- Left and right controls -->
+  <div class="carousel-item">
+    <img src="../static/images/aaronpic.png" alt="Chicago" width="359" height="358">
+  </div>
+  <div class="carousel-item">
+    <img src="../static/images/aaronpic.png" alt="New York" width="359" height="358">
+  </div>
+</div>
+-->
+<!-- Left and right controls
 <div>
-  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
+<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next"></a>
+  <span class="carousel-control-next-icon"></span>
 </div>
 </div>
 </div>
-</div>
+-->
 </body>
 </html>

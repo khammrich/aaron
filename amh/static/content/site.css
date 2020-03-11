@@ -1,12 +1,14 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("images/Home-indexphoto.jpeg");
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-image: url("images/Home-indexphoto.jpeg");
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -39,4 +41,11 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+#bgimage {
+    background-image: url(images/Home-indexphoto.jpeg), url(images/Forsale_sign.png);
+    background-position: center, left top;
+    background-repeat: no-repeat, repeat;
+    padding: 15px;
 }
