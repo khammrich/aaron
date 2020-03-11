@@ -1,6 +1,11 @@
 # Aaron Moore Real Estate Website
 <h2>Professional Website for the Real Estate Agent Aaron Moore.</h2>
-<h4><a href="https://AaronMooreHomes.Com">AaronMooreHomes.com</a>
+<h4>
+  <a href="https://AaronMooreHomes.Com" target="_blank">AaronMooreHomes.com</a>
+</h4>
+<h6>
+<p>Aaron Moore is a Real Estate Agent based in the PNW of Washington State</p>
+<h6>
 <P>
 <h3 align="left">Flask and Jinja2 based LEMP Stack.</h3>
 <ul> 
