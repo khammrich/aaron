@@ -9,7 +9,7 @@
   <li>MySQL</li>
   <li>Python</li>
 </ul>
-<h3 align="left">Flask and Jinja2 based LEMP Stack.</h3>  
+<h3 align="left">Some Features</h3>  
 <ul>
   <li>User accounts and sign up</li>
   <li>Contact form to Aaron Moore</li>
