@@ -1,9 +1,9 @@
 # Aaron Moore Real Estate Website
 <html>
-  <body>
+<body>
 <h2>Professional Website for the Real Estate Agent Aaron Moore.</h2>
 <h4>
-  <a href="https://AaronMooreHomes.Com" target="_blank">AaronMooreHomes.com</a>
+  <a rel="external" href="https://AaronMooreHomes.com" target="_blank">AaronMooreHomes.com</a>
 </h4>
 <h6>
 <p>Aaron Moore is a Real Estate Agent based in the PNW of Washington State</p>
@@ -26,5 +26,5 @@
   <li>Testimonials</li>
 </ul>
 </p>
-  </body>
+</body>
 </html>
