@@ -1,59 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="html">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="static/content/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="static/content/site.css"/>
-    <script src="static/scripts/modernizr-2.6.2.js"></script>
-    <style>
-        div {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            margin: auto;
-            display: block;
-        }
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}"/>
+    <script src="{{ url_for('static', filename ='/scripts/modernizr-2.6.2.js') }}"></script>
 
-        div.row {
-            background: rgba(75, 75, 75, 0);
-            background-image: inherit;
-            display: block;
-            float: inside;
-        }
-
-        div.second {
-            background: rgba(100, 100, 100, 0.1);
-        }
-
-        div.navbar {
-            background: rgba(0, 0, 0, 0.0);
-        }
-
-        div.navbar-collapse {
-            background: rgba(76, 175, 80, 0.);
-        }
-
-        div.bottom {
-            alignment: bottom;
-            background: rgba(0, 0, 0, 0.0);
-        }
-
-        div.body-content {
-            background: rgba(255, 255, 255, 0.6);
-            margin: 250px auto auto;
-            block-size: content-box;
-        }
-
-        body {
-            background: url(static/images/Home-indexphoto.jpeg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            margin: auto;
-        }
-    </style>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -64,30 +18,31 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">Aaron Moore Homes</a>
+            <a href="/" class="navbar-brand">{{ title }}</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {% for link in nav %}
                     <li><a href="{{ link.url }}" class="btn-large">{{ link.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
+                {% endfor %}
+            </ul>
         </div>
     </div>
+</div>
 
-    <div class="container body-content">
-        {% block content %}{% endblock %}
-    </div>
-<div class="bottom">
+<div class="container body-content">
+    {% block content %}{% endblock %}
+    <hr/>
     <footer>
-        <p>&copy; {{ year }} - AaronMooreHomes.com </p>
+        <p>&copy; {{ year }} - Aaron Moore Homes</p>
     </footer>
 </div>
-</div>
-<script src="static/scripts/jquery-1.10.2.js"></script>
-<script src="static/scripts/bootstrap.js"></script>
-<script src="static/scripts/respond.js"></script>
+
+<script src="{{ url_for('static', filename ='scripts/jquery-1.10.2.js') }}"></script>
+<script src="{{ url_for('static', filename ='scripts/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename ='scripts/respond.js') }}"></script>
 {% block scripts %}{% endblock %}
+
 </body>
 </html>
+

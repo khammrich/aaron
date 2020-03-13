@@ -1,35 +1,50 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<style>
-    iframe:focus {
-  outline: none;
-}
+    <style>
+        iframe:focus {
+            outline: none;
+        }
 
-    iframe[seamless] {
-        display: block;
-    }
+        iframe[seamless] {
+            display: block;
+        }
 
-    iframe:target {
-        target: parent;
-    }
-</style>
-    <iframe frameborder=0 height=800 src='http://www.mls.com/search/washington/metro/seattle-area.mvc'
+        iframe:target {
+            target: parent;
+            position: fixed;
+            scroll-behavior: auto;
+            display: block;
+        }
+
+
+    </style>
+    <iframe id="myFrame" frameborder=0 height=1500 src='http://nw.cevadoidx.com/index.php?site_id=56250'
             width=100%></iframe>
 
-    <script src='https://www.google.com/recaptcha/api.js?render=explicit&onload=onloadCallback' async defer></script>
-
+    <button onclick="myFunction()">Try it</button>
     <script>
-        _S.defaults.location = {
-            lat: 46.8297524,
-            lng: -100.9310539,
-            zoom: 12,
-            custom: 0
-        };
-        _S.defaults.mediaurl = '//media.springidx.com/media/';
+        function myFunction() {
+            var iframe = document.getElementById("myFrame");
+            var elmnt = iframe.contentWindow.document.getElementsByTagName("div")[0];
+            elmnt.style.display = "none"
+        }
     </script>
 
-    <meta name="spring:web" content="spring-web1.flexmls.com" />
-    <meta name="spring:last_sites_reload" content="Tuesday, March 10, 2020 4:26:38 AM UTC" />
+    <!-- REVIST LASTER
+        <script src='https://www.google.com/recaptcha/api.js?render=explicit&onload=onloadCallback' async defer></script>
+
+        <script>
+            _S.defaults.location = {
+                lat: 46.8297524,
+                lng: -100.9310539,
+                zoom: 12,
+                custom: 0
+            };
+            _S.defaults.mediaurl = '//media.springidx.com/media/';
+        </script>
+    -->
+    <meta name="spring:web" content="spring-web1.flexmls.com"/>
+    <meta name="spring:last_sites_reload" content="Tuesday, March 10, 2020 4:26:38 AM UTC"/>
 
 {% endblock %}

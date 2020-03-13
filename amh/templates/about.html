@@ -1,19 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<style>
-img {
-  float: left;
-}
-</style>
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+    <style>
+        img {
+            float: left;
+        }
+    </style>
+    <h2>{{ title }}.</h2>
+    <h3>{{ message }}</h3>
 
-<p><img src="../static/images/aaronpic.png" alt="Aaron Moore" style="width:250px;height:250px;margin-right:15px;"><br><br><br> With roots in the Pacific Northwest, I bring extensive knowledge and expertise to buying and selling real estate here. Real estate is not the same everywhere, so you need someone you can trust for up-to-date information and local trends.
-    If you are in the market to list, I can make your home attractive to its ideal audience - which can help you get top dollar.
-    Things like staging the home, making repairs or minor improvements, or even simply painting the walls can be the
-    difference between a home resting on the market and one that's sold fast.
-    I look forward to helping you from day one until closing day.
-    Whether you're buying or selling, It is my personal guarantee I will do everything I can to make the transaction as easy and stress free as possible.</p>
+    <p><img src="{{ url_for('static', filename='images/aaronpic.png') }}" alt="Aaron Moore"
+            style="width:250px;height:250px;margin-right:15px;"><br><br><br> With roots in the Pacific Northwest, I
+        bring extensive knowledge and expertise to buying and selling real estate here. Real estate is not the same
+        everywhere, so you need someone you can trust for up-to-date information and local trends.
+        If you are in the market to list, I can make your home attractive to its ideal audience - which can help you get
+        top dollar.
+        Things like staging the home, making repairs or minor improvements, or even simply painting the walls can be the
+        difference between a home resting on the market and one that's sold fast.
+        I look forward to helping you from day one until closing day.
+        Whether you're buying or selling, It is my personal guarantee I will do everything I can to make the transaction
+        as easy and stress free as possible.</p>
 
 {% endblock %}

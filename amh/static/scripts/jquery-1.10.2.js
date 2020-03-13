@@ -3336,20 +3336,20 @@ jQuery.support = (function( support ) {
 		div = document.createElement("div");
 
 	// Setup
-	div.setAttribute( "className", "t" );
-	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
+	div.setAttribute("className", "t");
+	div.innerHTML = "  <link/><table></table><a href=''></a><input type='checkbox'/>";
 
 	// Finish early in limited (non-browser) environments
 	all = div.getElementsByTagName("*") || [];
-	a = div.getElementsByTagName("a")[ 0 ];
-	if ( !a || !a.style || !all.length ) {
+	a = div.getElementsByTagName("a")[0];
+	if (!a || !a.style || !all.length) {
 		return support;
 	}
 
 	// First batch of tests
 	select = document.createElement("select");
-	opt = select.appendChild( document.createElement("option") );
-	input = div.getElementsByTagName("input")[ 0 ];
+	opt = select.appendChild(document.createElement("option"));
+	input = div.getElementsByTagName("input")[0];
 
 	a.style.cssText = "top:1px;float:left;opacity:.5";
 

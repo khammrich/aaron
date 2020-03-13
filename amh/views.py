@@ -14,7 +14,7 @@ def home():
     """Renders the home page."""
     return render_template(
         'index.html',
-        title='Home Page',
+        title='$$$ Aaron Moore Homes $$$',
         year=datetime.now().year,
         nav=nav
     )
@@ -44,18 +44,6 @@ def about():
     )
 
 
-@app.route('/bob')
-def cartest():
-    """Renders the about page."""
-    return render_template(
-        'bob.html',
-        title='caroseltester',
-        year=datetime.now().year,
-        message='test',
-        nav=nav
-    )
-
-
 @app.route('/search')
 def search():
     """Renders the about page."""
@@ -65,6 +53,7 @@ def search():
         year=datetime.now().year,
         message='Pick a Search Area',
         nav=nav
+
     )
 
 
