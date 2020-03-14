@@ -14,7 +14,7 @@ def home():
     """Renders the home page."""
     return render_template(
         'index.html',
-        title='$$$ Aaron Moore Homes $$$',
+        title='Aaron Moore Homes',
         year=datetime.now().year,
         nav=nav
     )
@@ -27,7 +27,7 @@ def contact():
         'contact.html',
         title='Contact',
         year=datetime.now().year,
-        message='Your contact page.',
+        message='Contact Aaron Moore Today',
         nav=nav
     )
 
