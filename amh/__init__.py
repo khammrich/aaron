@@ -2,7 +2,8 @@
 The flask application package.
 """
 from flask import Flask, url_for, Markup, render_template, request, Response
-
+from flask_bootstrap import Bootstrap
+from flask_wtf import Form
 
 def create_app():
     """Initialize the core application."""
@@ -10,6 +11,8 @@ def create_app():
                 instance_relative_config=False,
                 template_folder="templates",
                 static_folder="static")
+    Bootstrap(app)
+    Form(app)
 
     # Initialize Plugins
     # db.init_app(app)
@@ -27,4 +30,3 @@ def create_app():
         # app.register_blueprint(admin.admin_bp)
 
         return app
-

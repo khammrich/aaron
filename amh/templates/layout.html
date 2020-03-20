@@ -1,48 +1,85 @@
-<!DOCTYPE html>
-<html lang="html">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}"/>
-    <script src="{{ url_for('static', filename ='/scripts/modernizr-2.6.2.js') }}"></script>
 
-</head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">Aaron Moore Homes</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                {% for link in nav %}
-                    <li><a href="{{ link.url }}" class="btn-large">{{ link.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
+{% block doc -%}
+    <!DOCTYPE html>
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+    {%- block html %}
+        <head>
+            {%- block metas %}
+                <!-- Required meta tags -->
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            {%- endblock metas %}
 
-<div class="container body-content">
-    {% block content %}{% endblock %}
-    <hr/>
-    <footer>
-        <p>&copy; {{ year }} - Aaron Moore Homes</p>
-    </footer>
-</div>
+            {%- block head %}
+                <title>{% block title %}{{title|default}}{% endblock title %}</title>
 
-<script src="{{ url_for('static', filename ='scripts/jquery-1.10.2.js') }}"></script>
-<script src="{{ url_for('static', filename ='scripts/bootstrap.js') }}"></script>
-<script src="{{ url_for('static', filename ='scripts/respond.js') }}"></script>
-{% block scripts %}{% endblock %}
+                {%- block styles %}
 
-</body>
-</html>
+                    <!-- Bootstrap -->
+                    <link rel="stylesheet" type="text/css" href=../static/test.css>
+                    <link rel="stylesheet" type="text/css" href=../static/site.css>
+                    <script src=../static/scripts/modernizr-2.6.2.js></script>
+                    <link rel="stylesheet" type="text/css" href=//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+                {%- endblock styles %}
+            {%- endblock head %}
+        </head>
+        <body{% block body_attribs %}{% endblock body_attribs %}>
+        {% block body -%}
+            <header class="mt-0">
+                    <div class="container navbar-expand-lg navbar-dark mt-0">
+                        <ul class="navbar-nav">
+                        {% for link in nav %}
+                           <li class="navbar-item">
+                               <a href="{{ link.url }}" class="nav-link">{{ link.name }}</a>
+                           </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+
+                <div class="overlay mt-0"></div>
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src=../static/images/production%20ID_3770033.mp4 type="video/mp4">
+                </video>
+                <div class="container flex-lg-column justify-content-center">
+                    <div class="align-items-center">
+                        <div class="w-100 text-white">
+                            <h1 class="display-3">Search</h1>
+                            <p class="lead mb-0">Take the next step..</p>
+                            <form class="d-flex h-100 text-center align-items-center">
+                                <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon4" class="form-control bg-none border-0">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+            <section class="my-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <p>Info</p>
+                            <p class="mb-0">
+                                Info
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% block content -%}
+                <footer>
+                    <p>&copy; {{ year }} - Aaron Moore Homes</p>
+                </footer>
+            {%- endblock content %}
+
+            {% block scripts %}
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            {%- endblock scripts %}
+        {%- endblock body %}
+        </body>
+    {%- endblock html %}
+    </html>
+{% endblock doc -%}

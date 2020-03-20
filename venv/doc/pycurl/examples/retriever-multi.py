@@ -20,8 +20,6 @@ except ImportError:
 else:
     signal.signal(SIGPIPE, SIG_IGN)
 
-
-
 # Get args
 num_conn = 10
 try:
@@ -35,7 +33,6 @@ except:
     print("Usage: %s <file with URLs to fetch> [<# of concurrent connections>]" % sys.argv[0])
     raise SystemExit
 
-
 # Make a queue with (url, filename) tuples
 queue = []
 for url in urls:
@@ -45,7 +42,6 @@ for url in urls:
     filename = "doc_%03d.dat" % (len(queue) + 1)
     queue.append((url, filename))
 
-
 # Check args
 assert queue, "no URLs given"
 num_urls = len(queue)
@@ -53,7 +49,6 @@ num_conn = min(num_conn, num_urls)
 assert 1 <= num_conn <= 10000, "invalid number of concurrent connections"
 print("PycURL %s (compiled against 0x%x)" % (pycurl.version, pycurl.COMPILE_LIBCURL_VERSION_NUM))
 print("----- Getting", num_urls, "URLs using", num_conn, "connections -----")
-
 
 # Pre-allocate a list of curl objects
 m = pycurl.CurlMulti()
@@ -67,7 +62,6 @@ for i in range(num_conn):
     c.setopt(pycurl.TIMEOUT, 300)
     c.setopt(pycurl.NOSIGNAL, 1)
     m.handles.append(c)
-
 
 # Main loop
 freelist = m.handles[:]
@@ -112,7 +106,6 @@ while num_processed < num_urls:
     # We just call select() to sleep until some more data is available.
     m.select(1.0)
 
-
 # Cleanup
 for c in m.handles:
     if c.fp is not None:
@@ -120,4 +113,3 @@ for c in m.handles:
         c.fp = None
     c.close()
 m.close()
-

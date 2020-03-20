@@ -32,7 +32,7 @@ PY3 = sys.version_info[0] > 2
 class CURLTransport(xmlrpclib.Transport):
     """Handles a cURL HTTP transaction to an XML-RPC server."""
 
-    xmlrpc_h = [ "Content-Type: text/xml" ]
+    xmlrpc_h = ["Content-Type: text/xml"]
 
     def __init__(self, username=None, password=None):
         self.c = pycurl.Curl()
@@ -52,7 +52,7 @@ class CURLTransport(xmlrpclib.Transport):
         self.c.setopt(pycurl.VERBOSE, verbose)
         self.verbose = verbose
         try:
-           self.c.perform()
+            self.c.perform()
         except pycurl.error:
             v = sys.exc_info()[1]
             if PY3:
@@ -60,7 +60,7 @@ class CURLTransport(xmlrpclib.Transport):
             raise xmlrpclib.ProtocolError(
                 host + handler,
                 v[0], v[1], None
-                )
+            )
         b.seek(0)
         return self.parse_response(b)
 

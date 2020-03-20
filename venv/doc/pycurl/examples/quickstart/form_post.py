@@ -3,6 +3,7 @@
 # vi:ts=4:et
 
 import pycurl
+
 try:
     # python 3
     from urllib.parse import urlencode

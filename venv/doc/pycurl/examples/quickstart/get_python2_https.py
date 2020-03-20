@@ -11,7 +11,7 @@ c = pycurl.Curl()
 c.setopt(c.URL, 'http://pycurl.io/')
 c.setopt(c.WRITEDATA, buffer)
 # For older PycURL versions:
-#c.setopt(c.WRITEFUNCTION, buffer.write)
+# c.setopt(c.WRITEFUNCTION, buffer.write)
 c.setopt(c.CAINFO, certifi.where())
 c.perform()
 c.close()

@@ -1,6 +1,7 @@
 #!C:\Users\khamm\PycharmProjects\aaronhomes\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'Flask==1.1.1','console_scripts','flask'
 __requires__ = 'Flask==1.1.1'
+
 import re
 import sys
 from pkg_resources import load_entry_point

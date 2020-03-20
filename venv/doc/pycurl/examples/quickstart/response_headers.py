@@ -4,12 +4,15 @@
 
 import pycurl
 import re
+
 try:
     from io import BytesIO
 except ImportError:
     from StringIO import StringIO as BytesIO
 
 headers = {}
+
+
 def header_function(header_line):
     # HTTP standard specifies that headers are encoded in iso-8859-1.
     # On Python 2, decoding step can be skipped.
@@ -37,6 +40,7 @@ def header_function(header_line):
 
     # Now we can actually record the header name and value.
     headers[name] = value
+
 
 buffer = BytesIO()
 c = pycurl.Curl()

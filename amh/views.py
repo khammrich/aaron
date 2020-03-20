@@ -5,7 +5,9 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template
 from flask import current_app as app
+from markupsafe import __all__
 from .nav import nav
+
 
 
 @app.route('/')
@@ -79,3 +81,23 @@ def social():
         message='test',
         nav=nav
     )
+
+
+@app.route('/layouttest')
+def layouttest():
+    """Renders the about page."""
+    return render_template(
+        'layouttest.html',
+        title='layouttest',
+        year=datetime.now().year,
+        message='test',
+        nav=nav
+    )
+
+
+@app.route('/submit', methods=('GET', 'POST'))
+def submit():
+    form = MyForm()
+    if form.validate_on_submit():
+        return redirect('/success')
+    return render_template('submit.html', form=form)

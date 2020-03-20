@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="31.220.51.245" uploadOnCheckin="7be645f2-85ca-4205-9469-ceddde12c004" showDifferentInSync="false" showNewOnTargetInSync="false">
+  <component name="PublishConfigData" serverName="31.220.51.245" uploadOnCheckin="7be645f2-85ca-4205-9469-ceddde12c004" showDifferentInSync="false" showNewOnTargetInSync="false">
     <serverData>
       <paths name="31.220.51.245">
         <serverdata>
@@ -16,8 +16,28 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="amhTest">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="amhdemo">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/amhdemo" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/aaronmoorehomes" />
+            <excludedPath local="true" path="$PROJECT_DIR$/ENV_DIR" />
+            <excludedPath local="true" path="$PROJECT_DIR$/venv" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/ENV_DIR" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="31.220.51.245" />
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

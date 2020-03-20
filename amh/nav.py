@@ -7,6 +7,6 @@ nav = [
     # {'name': 'socialtest', 'url': 'social'},
     {'name': 'Search', 'url': 'search'},
     # {'name': 'Searchtest2', 'url': 'search2'},
-    # {'name': 'layoutnewTEST', 'url': 'layoutnewtest'},
+    {'name': 'layouttest', 'url': 'layouttest'},
     # {'name': 'Login', 'url': 'userauth'}
 ]

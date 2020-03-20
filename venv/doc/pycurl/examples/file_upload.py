@@ -5,12 +5,15 @@
 import os, sys
 import pycurl
 
+
 # Class which holds a file reference and the read callback
 class FileReader:
     def __init__(self, fp):
         self.fp = fp
+
     def read_callback(self, size):
         return self.fp.read(size)
+
 
 # Check commandline arguments
 if len(sys.argv) < 3:

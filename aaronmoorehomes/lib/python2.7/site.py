@@ -72,7 +72,7 @@ def read_pyvenv():
         except ValueError:
             continue  # ignore bad/empty lines
         else:
-            config[line[:split_at].strip()] = line[split_at + 1 :].strip()
+            config[line[:split_at].strip()] = line[split_at + 1:].strip()
     return config
 
 
@@ -87,16 +87,16 @@ def rewrite_standard_library_sys_path():
         value = abs_path(value)
         # replace old sys prefix path starts with new
         skip_rewrite = value == exe_dir  # don't fix the current executable location, notably on Windows this gets added
-        skip_rewrite = skip_rewrite  
+        skip_rewrite = skip_rewrite
         if not skip_rewrite:
             if value.startswith(exe_dir):
                 # content inside the exe folder needs to remap to original executables folder
                 orig_exe_folder = base_executable[: base_executable.rfind(sep)]
-                value = "{}{}".format(orig_exe_folder, value[len(exe_dir) :])
+                value = "{}{}".format(orig_exe_folder, value[len(exe_dir):])
             elif value.startswith(prefix):
-                value = "{}{}".format(base_prefix, value[len(prefix) :])
+                value = "{}{}".format(base_prefix, value[len(prefix):])
             elif value.startswith(exec_prefix):
-                value = "{}{}".format(base_exec_prefix, value[len(exec_prefix) :])
+                value = "{}{}".format(base_exec_prefix, value[len(exec_prefix):])
         sys.path[at] = value
 
 
