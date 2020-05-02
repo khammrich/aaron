@@ -3,6 +3,7 @@
 # vi:ts=4:et
 
 import pycurl
+
 try:
     from io import BytesIO
 except ImportError:

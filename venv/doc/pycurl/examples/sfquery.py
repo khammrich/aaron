@@ -14,6 +14,7 @@
 import sys, netrc
 import curl
 
+
 class SourceForgeUserSession(curl.Curl):
     # SourceForge-specific methods.  Sensitive to changes in site design.
     def login(self, name, password):
@@ -23,15 +24,18 @@ class SourceForgeUserSession(curl.Curl):
                                         ("return_to", ""),
                                         ("stay_in_ssl", "1"),
                                         ("login", "Login With SSL")))
+
     def logout(self):
         "Log out of SourceForge."
         self.get("account/logout.php")
+
     def fetch_xml(self, numid):
         self.get("export/xml_export.php?group_id=%s" % numid)
 
+
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        project_id = '28236'    # PyCurl project ID
+        project_id = '28236'  # PyCurl project ID
     else:
         project_id = sys.argv[1]
     # Try to grab authenticators out of your .netrc
@@ -60,6 +64,5 @@ if __name__ == "__main__":
     # Or maybe SourceForge has changed its site design so our check strings
     # are no longer valid.
     else:
-        sys.stderr.write("Unexpected page (%d bytes)\n"%len(session.body()))
+        sys.stderr.write("Unexpected page (%d bytes)\n" % len(session.body()))
         sys.exit(1)
-

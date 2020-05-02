@@ -1,27 +1,47 @@
 {% extends "layout.html" %}
-
 {% block content %}
-    <div class="row">
-        <div class="col-sm-3">
-            <h4>Getting started</h4>
-            <p>Contact Aaron</p>
-            <p><a class="btn btn-default" href="{{ url_for('contact') }}">Contact &raquo;</a></p>
-        </div>
-        <div class="col-sm-3">
-            <h4>Check out homes!</h4>
-            <p>MLS iFrame Search</p>
-            <p><a class="btn btn-default" href="{{ url_for('search') }}">Search &raquo;</a></p>
-        </div>
-        <div class="col-sm-3">
-            <h4>Social</h4>
-            <p>Social links testing</p>
-            <p><a class="btn btn-default" href="{{ url_for('social') }}">Social &raquo;</a></p>
-        </div>
-        <div class="col-sm-3">
-            <h4>Search2</h4>
-            <p>Test form</p>
-            <p><a class="btn btn-default" href="{{ url_for('search2') }}">Search2 &raquo;</a></p>
-        </div>
-    </div>
+
+    <div class="overlay mt-0"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src=../static/images/production%20ID_3770033.mp4 type="video/mp4">
+    </video>
+    <div class="container flex-lg-column justify-content-center">
+        <div class="align-items-center">
+            <div class="w-100 text-white">
+                <h1 class="display-3">Search</h1>
+                <p class="lead mb-0">Take the next step..</p>
+                <form class="d-flex h-100 text-center align-items-center">
+                    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon4" class="form-control bg-none border-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="row-no-gutters">
+                <h1>Recent Home</h1>
+                <hr/>
+            </div>
+
+            <div class="row row-no-gutters">
+                <div class="col-md-4">
+                    <h3>Column for homes 1<h3>
+                        <p>
+                            input from idx
+                        </p>
+                        <p><a class="btn btn-default" href="/"> view home &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Column for homes 1<h3>
+                        <p>
+                            input from idx
+                        </p>
+                        <p><a class="btn btn-default" href="/"> view home &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Column for homes 3<h3>
+                        <p>
+                            input from idx 3
+                        </p>
+                        <p><a class="btn btn-default" href="/"> view home &raquo;</a></p>
+                </div>
+            </div>
 
 {% endblock %}

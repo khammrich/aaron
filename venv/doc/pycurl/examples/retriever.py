@@ -8,6 +8,7 @@
 #
 
 import sys, threading
+
 try:
     import Queue
 except ImportError:
@@ -24,7 +25,6 @@ except ImportError:
 else:
     signal.signal(SIGPIPE, SIG_IGN)
 
-
 # Get args
 num_conn = 10
 try:
@@ -38,7 +38,6 @@ except:
     print("Usage: %s <file with URLs to fetch> [<# of concurrent connections>]" % sys.argv[0])
     raise SystemExit
 
-
 # Make a queue with (url, filename) tuples
 queue = Queue.Queue()
 for url in urls:
@@ -47,7 +46,6 @@ for url in urls:
         continue
     filename = "doc_%03d.dat" % (len(queue.queue) + 1)
     queue.put((url, filename))
-
 
 # Check args
 assert queue.queue, "no URLs given"
@@ -96,7 +94,6 @@ for dummy in range(num_conn):
     t = WorkerThread(queue)
     t.start()
     threads.append(t)
-
 
 # Wait for all threads to finish
 for thread in threads:

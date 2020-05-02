@@ -3,6 +3,7 @@
 # vi:ts=4:et
 
 import pycurl
+
 try:
     from io import BytesIO
 except ImportError:
@@ -13,7 +14,7 @@ c = pycurl.Curl()
 c.setopt(c.URL, 'http://pycurl.io/')
 c.setopt(c.WRITEDATA, buffer)
 # For older PycURL versions:
-#c.setopt(c.WRITEFUNCTION, buffer.write)
+# c.setopt(c.WRITEFUNCTION, buffer.write)
 c.perform()
 c.close()
 
